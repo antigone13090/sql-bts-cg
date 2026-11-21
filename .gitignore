@@ -1,0 +1,6 @@
+node_modules/
+playwright-report/
+test-results/
+
+dist/vendor/sql-wasm.js
+dist/vendor/sql-wasm.wasm

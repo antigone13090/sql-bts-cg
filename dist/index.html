@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr" data-theme="clair">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Exercez-vous à SQL en BTS Comptabilité et Gestion, directement dans votre navigateur.">
+<title>Atelier SQL · BTS CG</title>
+<link rel="stylesheet" href="./style.css">
+<script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#main">Aller à l’espace de travail</a>
+<header class="top">
+  <a class="brand" href="#parcours"><span aria-hidden="true">SQL</span><b>Atelier SQL<small>BTS Comptabilité et Gestion</small></b></a>
+  <nav aria-label="Navigation principale">
+    <a href="#parcours">Parcours</a><a href="#base">Explorer la base</a><a href="#libre">SQL libre</a>
+  </nav>
+  <button id="theme" aria-pressed="false">Mode sombre</button>
+</header>
+<div class="layout">
+  <aside class="sidebar">
+    <details id="navigation" open>
+      <summary>Chapitres et progression</summary>
+      <div class="progress-head"><span>Ma progression</span><strong id="total"></strong></div>
+      <progress id="progress" aria-label="Progression générale"></progress>
+      <nav id="modules" aria-label="Chapitres"></nav>
+      <a class="settings" href="#progression">Gérer ma progression</a>
+    </details>
+  </aside>
+  <main id="main" tabindex="-1"></main>
+</div>
+<template id="workbench">
+  <section class="editor-card">
+    <div class="card-head"><label for="sql">Éditeur SQL</label><span>SQLite</span></div>
+    <div class="editor">
+      <div id="lines" aria-hidden="true"></div>
+      <div class="code-area"><pre id="highlight" aria-hidden="true"></pre><textarea id="sql" spellcheck="false" autocapitalize="off" autocomplete="off" maxlength="20000" aria-describedby="keyboard"></textarea></div>
+    </div>
+    <div class="actions">
+      <button id="run">Exécuter</button><button class="primary" id="verify">Vérifier ma réponse</button><button id="hint">Indice</button><button id="reset">Réinitialiser</button>
+    </div>
+    <p class="keyboard" id="keyboard">Ctrl ou ⌘ + Entrée pour exécuter.</p>
+  </section>
+  <section id="help" class="card help" hidden></section>
+  <section class="card results" aria-label="Résultats SQL">
+    <div class="card-head"><h2>Résultats</h2><span id="stats"></span></div>
+    <p id="feedback" role="status">Exécutez une requête pour afficher ses résultats.</p>
+    <div id="output"></div>
+  </section>
+</template>
+<noscript>Activez JavaScript pour exécuter SQLite dans votre navigateur.</noscript>
+</body>
+</html>
